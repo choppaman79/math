@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>たしざんランド</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">＋</div>
+        <div>
+          <div class="brand-title">たしざんランド</div>
+          <div class="brand-sub">みて・かぞえて・たのしくれんしゅう</div>
+        </div>
+      </div>
+      <div class="top-stats">
+        <div class="pill">⭐ <span id="stars">0</span></div>
+        <div class="pill">🔥 <span id="streak">0</span></div>
+      </div>
+    </header>
+
+    <main>
+      <section id="homeScreen" class="screen active">
+        <div class="hero card">
+          <div>
+            <p class="eyebrow">3〜9さいくらいまで</p>
+            <h1>きょうは どの<br>たしざんにする？</h1>
+            <p class="hero-copy">年齢をえらぶと、むずかしさを自動で合わせます。</p>
+            <div class="age-row" id="ageButtons" aria-label="年齢選択"></div>
+          </div>
+          <div class="mascot-stage" aria-hidden="true">
+            <div class="mascot big"><span>●</span><span>●</span><b></b></div>
+            <div class="spark s1">★</div>
+            <div class="spark s2">✦</div>
+            <div class="spark s3">★</div>
+          </div>
+        </div>
+
+        <div class="section-title-row">
+          <h2>もんだいモード</h2>
+          <button id="resetProgressBtn" class="text-btn" type="button">きろくをリセット</button>
+        </div>
+        <div id="modeGrid" class="mode-grid"></div>
+      </section>
+
+      <section id="gameScreen" class="screen">
+        <div class="game-head">
+          <button id="backBtn" class="icon-btn" type="button" aria-label="もどる">←</button>
+          <div class="game-title-wrap">
+            <div id="gameModeLabel" class="game-kicker">みてたし算</div>
+            <div id="progressText" class="game-progress">1 / 10</div>
+          </div>
+          <div id="timerBox" class="timer hidden">60</div>
+        </div>
+
+        <div class="question-card card">
+          <div id="instruction" class="instruction">ぜんぶで いくつ？</div>
+          <div id="visualArea" class="visual-area"></div>
+          <div id="equation" class="equation"></div>
+          <div id="answerArea" class="answer-area"></div>
+          <div id="feedback" class="feedback" aria-live="polite"></div>
+          <button id="nextBtn" class="primary-btn hidden" type="button">つぎへ</button>
+        </div>
+      </section>
+
+      <section id="resultScreen" class="screen">
+        <div class="result-card card">
+          <div class="result-badge">🏆</div>
+          <p class="eyebrow">おつかれさま！</p>
+          <h2 id="resultTitle">よくできました！</h2>
+          <div class="result-score"><span id="resultCorrect">0</span><small>もん せいかい</small></div>
+          <p id="resultMessage" class="result-message"></p>
+          <div class="result-actions">
+            <button id="retryBtn" class="primary-btn" type="button">もういちど</button>
+            <button id="homeBtn" class="secondary-btn" type="button">ホームへ</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
